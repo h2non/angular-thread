@@ -65,7 +65,7 @@ app.factory('CoolService', function ($thread, Users) {
 Shortcut service to run task in a new thread or custom thread
 
 Running task in a new thread (created transparently)
-```
+```js
 app.factory('CoolService', function ($threadRun) {
   $threadRun(intensiveTask).then(function (result) {
     // ...
