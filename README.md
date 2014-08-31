@@ -77,7 +77,7 @@ app.factory('CoolService', function ($threadRun) {
 })
 ```
 
-Reusing a given pre-configured thread
+Reusing an existent pre-configured thread
 ```js
 app.factory('CoolService', function ($threadRun, $thread) {
   var thread = $thread({
