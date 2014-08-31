@@ -1,8 +1,7 @@
 # angular-thread [![Build Status](https://api.travis-ci.org/h2non/angular-thread.svg?branch=master)][travis]
 
-[AngularJS](http://angularjs.org) primitives bindings for [thread.js](https://github.com/h2non/thread.js)
-
-The most funny and multithreading ever, with Angular feelings
+[AngularJS](http://angularjs.org) primitives bindings for [thread.js](https://github.com/h2non/thread.js).
+The most funny and simple multithreading ever (with Angular feelings)
 
 ## Installation
 
