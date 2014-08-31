@@ -1,6 +1,7 @@
 # angular-thread [![Build Status](https://api.travis-ci.org/h2non/angular-thread.svg?branch=master)][travis]
 
-[AngularJS](http://angularjs.org) primitive bindings for [thread.js](https://github.com/h2non/thread.js).
+[AngularJS](http://angularjs.org) primitive bindings for [thread.js](https://github.com/h2non/thread.js)
+
 The most simple and funny multithreading ever with Angular feelings
 
 ## Installation
@@ -29,7 +30,7 @@ Or loading the script remotely
 
 ### Setup
 
-Load the module as dependency
+Load the module as dependency of your application
 ```js
 var app = angular.module('app', ['ngThread'])
 ```
