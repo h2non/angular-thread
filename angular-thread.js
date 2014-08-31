@@ -21,8 +21,7 @@ angular.module('ngThread', [])
     function threadRun() {
       function runner() {
         var job = runner.thread ? runner.thread : thread()
-        return job.run.apply(job, arguments)
-          .finally(function () { job.kill() })
+        return job.run.apply(job, arguments)['finally'](function () { job.kill() })
       }
       runner.thread = null
       return runner
@@ -49,11 +48,8 @@ angular.module('ngThread', [])
           return buf.slice()
         },
         push: function (thread) {
-          if (thread && thread instanceof $$thread.Thread) {
-            if (!this.has(thread)) {
-              buf.push(thread)
-            }
-          }
+          if (thread && thread instanceof $$thread.Thread)
+            if (!this.has(thread)) buf.push(thread)
         },
         remove: function (thread) {
           var index = buf.indexOf(thread)
