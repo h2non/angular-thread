@@ -11,9 +11,6 @@
       mocha.ui('bdd')
       mocha.reporter('html')
       expect = chai.expect
-      browserRequire = function (name) {
-        return window[name]
-      }
     </script>
     <script src="../bower_components/thread/thread.js"></script>
     <script src="../bower_components/angular/angular.js"></script>
@@ -24,8 +21,8 @@
     <script src="store.js"></script>
     <script src="run.js"></script>
     <script>
-      if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
-      else { mocha.run(); }
+      if (window.mochaPhantomJS) mochaPhantomJS.run()
+      else mocha.run()
     </script>
   </body>
 </html>

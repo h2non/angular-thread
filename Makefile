@@ -34,7 +34,7 @@ mocha:
 	$(MOCHA_PHANTOM) --reporter spec --ui bdd test/runner.html
 
 loc:
-	wc -l src/*
+	wc -l angular-thread.js
 
 release:
 	@$(call release, patch)
