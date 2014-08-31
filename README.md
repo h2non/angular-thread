@@ -1,7 +1,7 @@
 # angular-thread [![Build Status](https://api.travis-ci.org/h2non/angular-thread.svg?branch=master)][travis]
 
-[AngularJS](http://angularjs.org) primitives bindings for [thread.js](https://github.com/h2non/thread.js).
-The most funny and simple multithreading ever (with Angular feelings)
+[AngularJS](http://angularjs.org) primitive bindings for [thread.js](https://github.com/h2non/thread.js).
+The most simple and funny multithreading ever with Angular feelings
 
 ## Installation
 
@@ -38,22 +38,105 @@ var app = angular.module('app', ['ngThread'])
 
 #### $thread
 
-Inject and use the provider
-```js
-app.factory(function ($thread) {
-  $thread.run(function () {
+Main service to creating threads
+It's an injectable shortcut to `thread.js` public [API](https://github.com/h2non/thread.js#api)
 
+```js
+app.factory('CoolService', function ($thread, Users) {
+  var users = ['John', 'Michael', 'Jessica', 'Tom']
+  var thread = $thread({
+    env: { search: 'Tom' },
+    require: 'http://cdn.rawgit.com/h2non/hu/0.1.1/hu.js'
+  })
+
+  thread.run(function (users) {
+    return hu.filter(users, function (user) {
+      return user === env.search
+    })
+  }, users).then(function (users) {
+    console.log(users) // -> ['Tom']
   })
 })
 ```
 
 #### $threadRun
 
+Shortcut service to run task in a new thread or custom thread
+
+Running task in a new thread (created transparently)
+```
+app.factory('CoolService', function ($threadRun) {
+  $threadRun(intensiveTask).then(function (result) {
+    // ...
+  }, function (err) {
+    // ...
+  })
+})
+```
+
 #### $threadPool
+
+Built-in service to create pool of threads
+
+```js
+app.factory('CoolService', function ($threadPool) {
+  var pool = $threadPool(10)
+  pool.run(intensiveTask).then(function (result) {
+    // ...
+  }, function (err) {
+    // ...
+  })
+})
+```
 
 #### $threadStore
 
-#### $$thread
+Useful helper service to create containers to store and manage thread pools
+that you could use in your application
+
+It supports basic CRUD operations
+
+```js
+app.factory('CoolService', function ($threadStore, $thread) {
+  var thread = $thread()
+  // adding
+  $threadStore.push(thread)
+  // getting
+  $threadStore.get() // -> [ Thread ]
+  // checking
+  $threadStore.has(thread) // -> true
+  // removing
+  $threadStore.remove(thread)
+  // flushing
+  $threadStore.flush()
+  // counting
+  $threadStore.total() // -> 0
+})
+```
+
+##### $threadStore.push(thread)
+
+Add a new thread to the container
+
+##### $threadStore.get()
+
+Get all the container threads
+
+##### $threadStore.remove(thread)
+
+Remove a given stored thread in the container
+
+##### $threadStore.flush(thread)
+
+Empty all the container store
+
+##### $threadStore.total()
+
+Return the total number of threads stored
+
+##### $threadStore.has(thread)
+
+Return `true` if the given thread is already stored in the container
 
 ## Contributing
 

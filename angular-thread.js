@@ -19,11 +19,13 @@ angular.module('ngThread', [])
 
   .provider('$threadRun', ['$$thread', function (thread) {
     function threadRun() {
-      return function () {
-        var job = thread()
+      function runner() {
+        var job = runner.thread ? runner.thread : thread()
         return job.run.apply(job, arguments)
           .finally(function () { job.kill() })
       }
+      runner.thread = null
+      return runner
     }
     threadRun.$get = threadRun
     return threadRun
