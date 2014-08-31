@@ -2,7 +2,7 @@
 
 [AngularJS](http://angularjs.org) primitive bindings for [thread.js](https://github.com/h2non/thread.js)
 
-The most simple and funny multithreading ever with Angular feelings
+The most simple and funny multithreading ever, with Angular feelings
 
 ## Installation
 
@@ -39,7 +39,7 @@ var app = angular.module('app', ['ngThread'])
 
 #### $thread
 
-Main service to creating threads
+Main service to creating threads.
 It's an injectable shortcut to `thread.js` public [API](https://github.com/h2non/thread.js#api)
 
 ```js
@@ -67,6 +67,23 @@ Shortcut service to run task in a new thread or custom thread
 Running task in a new thread (created transparently)
 ```
 app.factory('CoolService', function ($threadRun) {
+  $threadRun(intensiveTask).then(function (result) {
+    // ...
+  }, function (err) {
+    // ...
+  })
+})
+```
+
+Reusing a given pre-configured thread
+```js
+app.factory('CoolService', function ($threadRun, $thread) {
+  var thread = $thread({
+    env: { timeout: 10 },
+    require: 'http://cdn.rawgit.com/h2non/hu/0.1.1/hu.js'
+  })
+  // define the thread to reuse instead of creating a new one
+  $threadRun.thread = thread
   $threadRun(intensiveTask).then(function (result) {
     // ...
   }, function (err) {
