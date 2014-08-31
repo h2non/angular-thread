@@ -1,4 +1,4 @@
-# angular-thread
+# angular-thread [![Build Status](https://api.travis-ci.org/h2non/thread.js.svg?branch=master)][travis]
 
 [AngularJS](http://angularjs.org) primitives bindings for [thread.js](https://github.com/h2non/thread.js)
 
@@ -56,6 +56,42 @@ app.factory(function ($thread) {
 
 #### $$thread
 
+## Contributing
+
+Wanna help? Cool! It will be appreciated :)
+
+You must add new test cases for any new feature or refactor you do,
+always following the same design/code patterns that already exist
+
+### Development
+
+Only [node.js](http://nodejs.org) is required for development
+
+Clone the repository
+```bash
+$ git clone https://github.com/h2non/angular-thread.git && cd angular-thread
+```
+
+Install dependencies
+```bash
+$ npm install
+```
+```bash
+$ bower install
+```
+
+Generate browser bundle source
+```bash
+$ make browser
+```
+
+Run tests
+```bash
+$ make test
+```
+
 ## License
 
 [MIT](http://opensource.org/licenses/MIT) © Tomas Aparicio
+
+[travis]: http://travis-ci.org/h2non/angular-thread
