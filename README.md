@@ -4,7 +4,7 @@
 
 The most simple and funny multithreading ever, with Angular feelings
 
-For more information about `thread.js`, please see library the [documentation](https://github.com/h2non/thread.js#basic-usage), usage [examples](https://github.com/h2non/thread.js/tree/master/examples) and be aware about [threads limitations](https://github.com/h2non/thread.js#threads-limitations)
+For more information about thread.js, please see library the [documentation](https://github.com/h2non/thread.js#basic-usage), usage [examples](https://github.com/h2non/thread.js/tree/master/examples) and be aware about [threads limitations](https://github.com/h2non/thread.js#threads-limitations)
 
 ## Installation
 
