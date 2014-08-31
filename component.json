@@ -1,0 +1,31 @@
+{
+  "name": "angular-thread",
+  "description": "AngularJS primitives for thread.js library",
+  "version": "0.1.0",
+  "author": "Tomas Aparicio",
+  "repository": "h2non/angular-thread",
+  "scripts": [
+    "angular-thread.js",
+    "angular-thread.min.js"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "parallel",
+    "worker",
+    "webworker",
+    "processing",
+    "process",
+    "fork",
+    "compute",
+    "non-blocking",
+    "blocking",
+    "multiprocess",
+    "child",
+    "multicore",
+    "spawn"
+  ],
+  "dependencies": {
+    "h2non/thread.js": "~0.1.1"
+  }
+}
