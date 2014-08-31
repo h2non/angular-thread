@@ -24,11 +24,8 @@ endef
 
 default: all
 all: test
-browser: banner uglify
+browser: uglify
 test: browser mocha
-
-banner:
-	@echo $(BANNER) > thread.js
 
 uglify:
 	$(UGLIFYJS) angular-thread.js --mangle --preamble $(BANNER) > angular-thread.min.js
