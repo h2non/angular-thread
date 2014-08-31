@@ -45,7 +45,7 @@ Main service to creating threads.
 It's an injectable shortcut to `thread.js` public [API](https://github.com/h2non/thread.js#api)
 
 ```js
-app.factory('CoolService', function ($thread, Users) {
+app.factory('CoolService', function ($thread) {
   var users = ['John', 'Michael', 'Jessica', 'Tom']
   var thread = $thread({
     env: { search: 'Tom' },
