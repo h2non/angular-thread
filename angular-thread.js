@@ -18,29 +18,27 @@ angular.module('ngThread', [])
   }])
 
   .provider('$threadRun', ['$$thread', function (thread) {
-    function threadRun() {
-      function runner() {
-        var job = runner.thread ? runner.thread : thread()
-        var task = job.run.apply(job, arguments)
-        if (!runner.thread) {
-          task['finally'](function () { job.kill() })
-        }
-        return task
+    function runner() {
+      var job = this.thread ? this.thread : thread()
+      var task = job.run.apply(job, arguments)
+      if (!this.thread) {
+        task['finally'](function () { job.kill() })
       }
-      runner.thread = null
-      return runner
+      return task
     }
-    threadRun.$get = threadRun
-    return threadRun
+    runner.$get = function () {
+      function run() { return runner.apply(run, arguments) }
+      run.thread = null
+      return run
+    }
+    return runner
   }])
 
   .provider('$threadPool', ['$$thread', function (thread) {
-    function poolFactory() {
-      return function (num) {
-        return thread().pool(num)
-      }
+    function poolFactory(num) {
+      return thread().pool(num)
     }
-    poolFactory.$get = poolFactory
+    poolFactory.$get = function () { return poolFactory }
     return poolFactory
   }])
 
