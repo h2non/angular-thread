@@ -64,20 +64,23 @@ app.factory('CoolService', function ($thread) {
 
 #### $threadRun
 
-Shortcut service to run task in a new thread or custom thread
+Shortcut service to run task in a new thread or custom thread.
 
-Running task in a new thread (created transparently)
+
+Running task in a new thread (created transparently).
+The thread will be killed after the task finished with success or fail state
 ```js
 app.factory('CoolService', function ($threadRun) {
-  $threadRun(intensiveTask).then(function (result) {
-    // ...
-  }, function (err) {
-    // ...
-  })
+  $threadRun(intensiveTask, /* { bind context }, [ task arguments ] */)
+    .then(function (result) {
+      // ...
+    }, function (err) {
+      // ...
+    })
 })
 ```
 
-Reusing an existent pre-configured thread
+Reusing an existent pre-configured thread.
 ```js
 app.factory('CoolService', function ($threadRun, $thread) {
   var thread = $thread({

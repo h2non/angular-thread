@@ -21,7 +21,10 @@ angular.module('ngThread', [])
     function threadRun() {
       function runner() {
         var job = runner.thread ? runner.thread : thread()
-        return job.run.apply(job, arguments)['finally'](function () { job.kill() })
+        var task = job.run.apply(job, arguments)
+        if (runner.thread) {
+          task['finally'](function () { job.kill() })
+        return task
       }
       runner.thread = null
       return runner
