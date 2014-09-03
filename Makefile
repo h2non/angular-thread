@@ -28,7 +28,7 @@ browser: uglify
 test: browser mocha
 
 uglify:
-	$(UGLIFYJS) angular-thread.js --mangle --preamble $(BANNER) > angular-thread.min.js
+	$(UGLIFYJS) angular-thread.js --mangle --preamble $(BANNER) --source-map angular-thread.min.js.map > angular-thread.min.js
 
 mocha:
 	$(MOCHA_PHANTOM) --reporter spec --ui bdd test/runner.html

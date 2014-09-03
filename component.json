@@ -6,7 +6,8 @@
   "repository": "h2non/angular-thread",
   "scripts": [
     "angular-thread.js",
-    "angular-thread.min.js"
+    "angular-thread.min.js",
+    "angular-thread.min.js.map"
   ],
   "license": "MIT",
   "keywords": [

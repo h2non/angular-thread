@@ -58,7 +58,7 @@ app.factory('CoolService', function ($thread) {
     return hu.filter(users, function (user) {
       return user === env.search
     })
-  }, users).then(function (users) {
+  }, [ users ]).then(function (users) {
     console.log(users) // -> ['Tom']
   })
 })
