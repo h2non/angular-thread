@@ -67,7 +67,7 @@ app.factory('CoolService', function ($thread) {
 #### $threadRun
 
 Shortcut service to run task in a new thread or custom thread.
-
+See the original API [method documentation](https://github.com/h2non/thread.js#threadrunfn-env-args)
 
 Running task in a new thread (created transparently).
 The thread will be killed after the task finished with success or fail state
@@ -101,7 +101,8 @@ app.factory('CoolService', function ($threadRun, $thread) {
 
 #### $threadPool
 
-Built-in service to create pool of threads
+Built-in service to create pool of threads.
+See the original API [method documentation](https://github.com/h2non/thread.js#threadpoolnumber)
 
 ```js
 app.factory('CoolService', function ($threadPool) {
