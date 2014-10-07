@@ -5,7 +5,7 @@
   "license": "MIT",
   "author": "Tomas Aparicio",
   "repository": "h2non/angular-thread",
-  "main": "./thread.js",
+  "main": "./angular-thread.js",
   "keywords": [
     "angular",
     "parallel",

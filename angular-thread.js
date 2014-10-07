@@ -1,7 +1,7 @@
 /*! angular-thread - v0.1 - MIT License - https://github.com/h2non/angular-thread */
 angular.module('ngThread', [])
 
-  .constant('$$thread', window.thread)
+  .constant('$$thread', typeof require === 'function' ? require('thread') : window.thread)
 
   .config(['$$thread', function (thread) {
     if (typeof thread !== 'function') {
