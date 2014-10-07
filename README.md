@@ -21,7 +21,7 @@ component install h2non/angular-thread
 
 Or loading the script remotely
 ```html
-<script src="//cdn.rawgit.com/h2non/angular-thread/0.1.1/angular-thread.js"></script>
+<script src="//cdn.rawgit.com/h2non/angular-thread/0.1.2/angular-thread.js"></script>
 ```
 
 ### Environments
