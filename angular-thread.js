@@ -1,4 +1,4 @@
-/*! angular-thread - v0.1 - MIT License - https://github.com/h2non/angular-thread */
+/*! angular-thread - v0.1.3 - MIT License - https://github.com/h2non/angular-thread */
 angular.module('ngThread', [])
 
   .constant('$$thread', window.thread)
