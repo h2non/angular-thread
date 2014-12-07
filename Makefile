@@ -1,7 +1,8 @@
+VERSION = 0.1.3
 BROWSERIFY = node ./node_modules/browserify/bin/cmd.js
 MOCHA = ./node_modules/.bin/mocha
 UGLIFYJS = ./node_modules/.bin/uglifyjs
-BANNER = "/*! angular-thread - v0.1 - MIT License - https://github.com/h2non/angular-thread */"
+BANNER = "/*! angular-thread - v$(VERSION) - MIT License - https://github.com/h2non/angular-thread */"
 MOCHA_PHANTOM = ./node_modules/.bin/mocha-phantomjs
 
 define release
@@ -27,7 +28,7 @@ browser: uglify
 test: browser mocha
 
 uglify:
-	$(UGLIFYJS) angular-thread.js --mangle --preamble $(BANNER) --source-map angular-thread.min.js.map > angular-thread.min.js
+	$(UGLIFYJS) angular-thread.js --mangle --preamble $(BANNER) --source-map angular-thread.min.js.map --source-map-url http://cdn.rawgit.com/h2non/angular-thread/$(VERSION)/angular-thread.min.js.map  > angular-thread.min.js
 
 mocha:
 	$(MOCHA_PHANTOM) --reporter spec --ui bdd test/runner.html
