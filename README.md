@@ -1,4 +1,4 @@
-# angular-thread [![Build Status](https://api.travis-ci.org/h2non/angular-thread.svg?branch=master)][travis] [![Code Climate](https://codeclimate.com/github/h2non/angular-thread/badges/gpa.svg)](https://codeclimate.com/github/h2non/angular-thread)
+# angular-thread [![Build Status](https://api.travis-ci.org/h2non/angular-thread.svg?branch=master)][travis] [![Code Climate](https://codeclimate.com/github/h2non/angular-thread/badges/gpa.svg)](https://codeclimate.com/github/h2non/angular-thread) [![Version](https://img.shields.io/bower/v/angular-thread.svg)](https://github.com/h2non/angular-thread/releases)
 
 [AngularJS](http://angularjs.org) primitive bindings for [thread.js](https://github.com/h2non/thread.js)
 
