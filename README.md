@@ -21,7 +21,7 @@ component install h2non/angular-thread
 
 Or loading the script remotely
 ```html
-<script src="//cdn.rawgit.com/h2non/angular-thread/0.1.2/angular-thread.js"></script>
+<script src="//cdn.rawgit.com/h2non/angular-thread/0.1.3/angular-thread.js"></script>
 ```
 
 ### Environments
@@ -29,8 +29,10 @@ Or loading the script remotely
 - Chrome >= 5
 - Firefox >= 3
 - Safari >= 5
-- Opera >= 10
-- IE >= 8
+- Opera >= 12
+- IE >= 9 (IE8 is not officially supported, but it may work)
+- PhantomJS >= 1.7
+- SlimerJS >= 0.8
 
 ### Setup
 
